@@ -163,7 +163,7 @@ final class GameViewController: UIViewController {
         for alien in aliensArmy {
             if (direction) { step = -1 } else { step = 1 }
             alien.frame = CGRect(x: alien.frame.minX+step, y: alien.frame.minY+0.2, width: alien.frame.width, height: alien.frame.height)
-            if (alien.frame.maxY >= player.frame.minY) {
+            if (alien.frame.maxY >= player.frame.minY && alien.isHidden == false) {
                 gameOver()
             }
             switch direction {
